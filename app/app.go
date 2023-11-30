@@ -1,6 +1,7 @@
 package app
 
 import (
+	"os"
 	"project-4/auth"
 	"project-4/dto"
 
@@ -9,7 +10,7 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-// var PORT = ":8080"
+// var PORT = "8080"
 
 func StartServer() {
 	router := gin.Default()
@@ -50,5 +51,5 @@ func StartServer() {
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
-	router.Run(PORT)
+	router.Run(os.Getenv("PORT"))
 }
