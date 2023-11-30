@@ -50,5 +50,5 @@ func StartServer() {
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
-	router.Run(PORT)
+	router.Run("0.0.0.0:" + PORT)
 }

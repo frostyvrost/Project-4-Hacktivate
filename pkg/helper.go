@@ -10,7 +10,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-var secretKey = "seed"
+var secretKey = "RAHASIA"
 
 func GenerateToken(id int, email string, role string) (string, Error) {
 	claims := jwt.MapClaims{
