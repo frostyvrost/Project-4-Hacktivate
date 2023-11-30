@@ -9,7 +9,7 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-var PORT = ":8080"
+// var PORT = ":8080"
 
 func StartServer() {
 	router := gin.Default()
@@ -50,5 +50,5 @@ func StartServer() {
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
-	router.Run("0.0.0.0:" + PORT)
+	router.Run(PORT)
 }
