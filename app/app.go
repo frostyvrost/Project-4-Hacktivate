@@ -6,8 +6,6 @@ import (
 	"project-4/dto"
 
 	"github.com/gin-gonic/gin"
-	swaggerfiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // var PORT = "8080"
@@ -48,8 +46,6 @@ func StartServer() {
 		transactionHistoryRouter.GET("/my-transactions", dto.GetTransactionsByUserID)
 		transactionHistoryRouter.GET("/user-transactions", auth.AdminAuthorization(), dto.GetAllTransaction)
 	}
-
-	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
 	router.Run(":" + os.Getenv("PORT"))
 }
